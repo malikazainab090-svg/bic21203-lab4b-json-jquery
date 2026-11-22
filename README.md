@@ -28,4 +28,4 @@ This repository contains the files for Lab #4b covering JSON data structuring, a
 
 ### Question 3 (`jquery-dom.html`)
 ![Question 3 - jquery-dom.html](Q3.png)
-![Question 3 - jquery-dom.html](Q3 (2).png)
+![Question 3 - jquery-dom.html](Q3(2).png)
