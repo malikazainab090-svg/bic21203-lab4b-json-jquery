@@ -19,6 +19,12 @@ This repository contains the files for Lab #4b covering JSON data structuring, a
 4. Open `jquery-dom.html` through Live Server (`http://127.0.0.1:5500/jquery-dom.html`) to verify the modified text, coral box styling, and click alert (`"Button clicked!"`).
 
 ## Screenshots
-- **Question 1 (`books.json`):** *(Add screenshot of complete `books.json` and JSON parse verification)*
-- **Question 2 (`books.html`):** *(Add screenshot of `books.html` rendered via Live Server)*
-- **Question 3 (`jquery-dom.html`):** *(Add screenshot of `jquery-dom.html` showing DOM updates and click alert)*
+
+### Question 1 (`books.json`)
+![Question 1 - books.json](Q1.png)
+
+### Question 2 (`books.html` via Live Server)
+![Question 2 - books.html](Q2.png)
+
+### Question 3 (`jquery-dom.html`)
+![Question 3 - jquery-dom.html](Q3.png)
