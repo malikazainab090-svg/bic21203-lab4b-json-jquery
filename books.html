@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab 4b - Question 2: Books JSON Viewer</title>
+</head>
+<body>
+  <h1>Books Catalog</h1>
+
+  <p id="firstBookTitle"></p>
+  <p id="secondBookAuthor"></p>
+
+  <h2>Genres by Book</h2>
+  <ul id="genreList"></ul>
+
+  <p id="errorMessage" role="alert"></p>
+
+  <script>
+    const firstBookTitleEl = document.getElementById("firstBookTitle");
+    const secondBookAuthorEl = document.getElementById("secondBookAuthor");
+    const genreListEl = document.getElementById("genreList");
+    const errorMessageEl = document.getElementById("errorMessage");
+
+    async function loadBooks() {
+      try {
+        const response = await fetch("books.json");
+        if (!response.ok) {
+          throw new Error(`HTTP status ${response.status}`);
+        }
+
+        const data = await response.json();
+        if (!data || !Array.isArray(data.books) || data.books.length < 2) {
+          throw new Error("Invalid books data structure");
+        }
+
+        const firstBook = data.books[0];
+        const secondBook = data.books[1];
+
+        firstBookTitleEl.textContent = `First Book Title: ${firstBook.title}`;
+        secondBookAuthorEl.textContent = `Second Book Author: ${secondBook.author}`;
+
+        genreListEl.textContent = "";
+        data.books.forEach((book) => {
+          const li = document.createElement("li");
+          const genreText = Array.isArray(book.genres) ? book.genres.join(", ") : "";
+          li.textContent = `${book.title} — ${genreText}`;
+          genreListEl.appendChild(li);
+        });
+      } catch (err) {
+        firstBookTitleEl.textContent = "";
+        secondBookAuthorEl.textContent = "";
+        genreListEl.textContent = "";
+        errorMessageEl.textContent =
+          "Unable to load book data right now. Please run this page through a local server and verify books.json.";
+      }
+    }
+
+    loadBooks();
+  </script>
+</body>
+</html>
