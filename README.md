@@ -22,6 +22,7 @@ This repository contains the files for Lab #4b covering JSON data structuring, a
 
 ### Question 1 (`books.json`)
 ![Question 1 - books.json](Q1.png)
+![Question 1 - JSON Parse Confirmation](Q1-parse.png)
 
 ### Question 2 (`books.html` via Live Server)
 ![Question 2 - books.html](Q2.png)
